@@ -1,10 +1,7 @@
 package br.rodrigo.estudo;
 
-import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.TextView;
 
 public class DisplayMessage extends MainActivity {
@@ -22,7 +19,9 @@ public class DisplayMessage extends MainActivity {
 		
 		setContentView(textView);
 		
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		// Quando a Acitivity que criamos extende Activity(necessário para criar thema customziado) 
+		// ao invés de ActionBarActivity não podemos usar getSupportActionBar()
+		//getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		
 	}
 
