@@ -21,7 +21,7 @@ public class DisplayMessage extends MainActivity {
 		
 		// Quando a Acitivity que criamos extende Activity(necessário para criar thema customziado) 
 		// ao invés de ActionBarActivity não podemos usar getSupportActionBar()
-		//getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		
 	}
 

@@ -13,7 +13,7 @@ public class ActivityBuscar extends MainActivity{
 		setContentView(R.layout.activity_activity_buscar);
 		
 		// Mesmo com este trecho comentado o botão aparece. Por que? 
-		//getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		
 	}
 
