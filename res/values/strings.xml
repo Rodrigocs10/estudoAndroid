@@ -8,5 +8,7 @@
     <string name="title_activity_display_message">DisplayMessage</string>
     <string name="buscar">Buscar</string>
     <string name="title_activity_activity_buscar">ActivityBuscar</string>
+    <string name="digitar_busca">Digitar busca</string>
+    <string name="button_buscar">Buscar</string>
 
 </resources>
