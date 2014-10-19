@@ -35,7 +35,8 @@
         </activity>
         <activity
             android:name=".ActivityBuscar"
-            android:label="@string/title_activity_activity_buscar" >
+            android:label="@string/title_activity_activity_buscar"
+            android:theme="@style/Theme.Base.AppCompat.Dialog.FixedSize" >
             
            <meta-data
                 android:name ="android.support.PARENT_ACTIVITY"
