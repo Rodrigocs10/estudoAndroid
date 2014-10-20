@@ -12,4 +12,9 @@
 **Solução?**
 *Ainda não foi solucionado*
 
+###*20/10/14*
+>Quando não uso onSaveInstanceState(Bundle savedInstanceState) para salvar um inteiro, quando viro a tela o estado não é salvo. Mas quando mudo para outra aplicação é salvo. Por que?
+
+
+
 

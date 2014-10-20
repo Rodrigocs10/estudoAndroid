@@ -13,21 +13,19 @@ public class MainActivity extends ActionBarActivity {
 	public static final String MENSAGEM = "br.rodrigo.estudo.Mensagem";
 
 	// Valores usados para testar salvamento de status via onSaveInstanceState
-	static final String STATE_SCORE = "playerScore";
-	static final String STATE_LEVEL = "playerLevel";
+	static final String COUNT_RESUME = "countResume";
+	static final String COUNT_RESTART = "countRestart";
 
-	private int mCurrentScore;
-	private int mCurrentLevel;
+	private int countOnResume;
+	private int countOnRestart;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		mCurrentLevel++;
-		mCurrentScore++;
-		
-		
+		countOnResume++;
+		countOnRestart++;
 
 	}
 
@@ -67,23 +65,24 @@ public class MainActivity extends ActionBarActivity {
 
 	}
 
+	public int getCountOnResume() {
+		return countOnResume;
+	}
+
+	public void setCountOnResume(int countOnResume) {
+		this.countOnResume = countOnResume;
+	}
+
+	public int getCountOnRestart() {
+		return countOnRestart;
+	}
+
+	public void setCountOnRestart(int countOnRestart) {
+		this.countOnRestart = countOnRestart;
+	}
+
 	
 
 	
-	protected int getmCurrentScore() {
-		return mCurrentScore;
-	}
-
-	protected void setmCurrentScore(int mCurrentScore) {
-		this.mCurrentScore = mCurrentScore;
-	}
-
-	protected int getmCurrentLevel() {
-		return mCurrentLevel;
-	}
-
-	protected void setmCurrentLevel(int mCurrentLevel) {
-		this.mCurrentLevel = mCurrentLevel;
-	}
-
+	
 }

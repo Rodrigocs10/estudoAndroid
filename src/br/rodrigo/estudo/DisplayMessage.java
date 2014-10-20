@@ -6,6 +6,9 @@ import android.widget.TextView;
 
 public class DisplayMessage extends MainActivity {
 
+	
+	private TextView textView ;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -14,15 +17,15 @@ public class DisplayMessage extends MainActivity {
 		Intent intent = getIntent();
 		String text = intent.getStringExtra(MainActivity.MENSAGEM);
 		
-		TextView textView = new TextView(this);
-		textView.setText(text + ", current level: " + getmCurrentLevel() + 
-				"Currente score: " + getmCurrentScore());
+		textView = new TextView(this);
+		
 				
 		// Check whether we're recreating a previously destroyed instance
 				if (savedInstanceState != null) {
 					// Restore value of members from saved state
-					setmCurrentLevel(savedInstanceState.getInt(STATE_LEVEL));
-					setmCurrentScore(savedInstanceState.getInt(STATE_SCORE));
+					setCountOnResume(savedInstanceState.getInt(COUNT_RESUME));
+					setCountOnRestart(savedInstanceState.getInt(COUNT_RESTART));
+					
 					 
 				} else {
 					// Probably initialize members with default values for a new
@@ -34,17 +37,30 @@ public class DisplayMessage extends MainActivity {
 		// Quando a Acitivity que criamos extende Activity(necessário para criar thema customziado) 
 		// ao invés de ActionBarActivity não podemos usar getSupportActionBar()
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		//setmCurrentLevel(getmCurrentLevel() + 1)
 		
 	}
-	
+
+	//setmCurrentLevel(getmCurrentLevel() + 1)
 	public void onRestart(){
 		super.onRestart();
-		setmCurrentLevel(getmCurrentLevel() + 1);
-		setmCurrentScore(getmCurrentScore() + 1);
+		setCountOnRestart(getCountOnRestart() + 1);		
 	}
+	
+	public void onResume(){
+		super.onResume();
+		setCountOnResume(getCountOnResume() + 1);
+		atualizaTexto(getCountOnResume(), getCountOnRestart());
+	}
+	
+	private void atualizaTexto(int countResume, int countRestart){
+		textView.setText("count Resume: " + countResume + 
+				"count restart: " + countRestart);
+	}
+	
 	public void onSaveInstanceState(Bundle savedInstanceState) {
-		savedInstanceState.putInt(STATE_SCORE, 1);
-		savedInstanceState.putInt(STATE_LEVEL, 2);
+		savedInstanceState.putInt(COUNT_RESTART, getCountOnRestart());
+		savedInstanceState.putInt(COUNT_RESUME, getCountOnResume());
 
 		// Always call the superclass so it can save the view hierarchy state
 		super.onSaveInstanceState(savedInstanceState);
