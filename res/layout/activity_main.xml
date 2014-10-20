@@ -13,6 +13,13 @@
     <EditText android:id="@+id/edit_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Inserir texto" />
+        android:hint="@string/edit_texto" />
+       
+     
+    <fragment android:name="br.rodrigo.estudo.ArticleReaderFragment"
+            android:id="@+id/viewer"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent" />
     
 </LinearLayout>

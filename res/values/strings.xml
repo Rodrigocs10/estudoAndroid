@@ -10,5 +10,8 @@
     <string name="title_activity_activity_buscar">ActivityBuscar</string>
     <string name="digitar_busca">Digitar busca</string>
     <string name="button_buscar">Buscar</string>
-
+    <string name="edit_texto">Inserir texto</string>
+	<string name="btn_carregar_noticia">Carregar Notícia</string>
+    
+    
 </resources>
